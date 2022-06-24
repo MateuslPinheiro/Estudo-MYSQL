@@ -1,0 +1,33 @@
+Comandos SQL:
+
+DDL: Data Definition Language
+
+CREATE  //Cria tabela ou outro objeto
+
+ALTER   //Modifica objeto
+
+DROP    //Exclui tabela inteira
+
+
+
+DML: Data Manipulation Language
+
+INSERT 	//Cria um registo(linha)
+
+UPDATE 	//Modifica registro
+
+DELETE 	//Exclui registro
+
+
+
+DCL: Data Control Language
+
+GRANT	//Dá privilégios a um usuário
+
+REVOKE	//Retira privilégios de um usuário
+
+
+
+DQL: Data Query Language
+
+SELECT 	//Obtém registros especificados de uma ou mais tabelas. (consulta)

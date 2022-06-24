@@ -1,0 +1,48 @@
+Criar Tabelas
+
+CREATE TABLE [IF NOT EXISTS] nome_tabela(
+coluna1 tipo1 restrições,
+coluna2 tipo2 restrições,
+colunaN tipoN restrições,
+restrições extras
+);
+
+Ex: CREATE TABLE IF NOT EXISTS tbl_Livros(
+IDLivro smallint NOT NULL AUTO_INCREMENT,
+NomeLivro Varchar(70) NOT NULL,
+ISBN13 Varchar(13) NOT NULL,
+DataPub DATE,
+PrecoLivro decimal(10,2) NOT NULL,
+NumeroPaginas smallint NOT NULL,
+IdEditora smallint NOT NULL,
+IdAssunto Tinyint NOT NULL,
+CONSTRAINT pk_id_livro PRIMARY KEY (IDLivro),
+CONSTRAINT fk_id_editora FOREIGN KEY (IdEditora) REFERENCES tbl_Editoras (IdEditora) ON DELETE CASCADE,
+CONSTRAINT fk_id_assunto FOREIGN KEY (IdAssunto) REFERENCES tbl_Assuntos (IdAssunto) ON DELETE CASCADE
+);
+
+Ex²: CREATE TABLE tbl_autores(
+IDAutor smallint auto_increment,
+NomeAutor VARCHAR(50) not null,
+SobrenomeAutor VARCHAR(60) not null,
+constraint pk_id_autor primary key (idAutor)
+);
+
+Ex³: CREATE TABLE tbl_Editoras(
+IdEditora SMALLINT PRIMARY KEY AUTO_INCREMENT,
+NomeEditora VARCHAR(50) NOT NULL
+);
+
+Ex⁴: CREATE TABLE tbl_Assuntos(
+IdAssunto tinyint auto_increment,
+Assunto VARCHAR(25) NOT NULL,
+CONSTRAINT pk_id_assunto PRIMARY KEY (IdAssunto)
+);
+
+Ex⁵: CREATE TABLE tbl_LivrosAutores (
+IdLivro smallint NOT NULL,
+IdAutor smallint NOT NULL,
+CONSTRAINT pk_id_livro_autor PRIMARY KEY (IdLivro, IdAutor),
+CONSTRAINT fk_id_livros FOREIGN KEY (IdLivro) REFERENCES tbl_Livros(IDLivro),
+CONSTRAINT fk_id_autores FOREIGN KEY (IdAutor) REFERENCES tbl_autores (IdAutor)
+);

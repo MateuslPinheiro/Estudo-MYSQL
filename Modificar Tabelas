@@ -1,0 +1,41 @@
+Modificar Tabelas
+
+Pegar informações da tabela:
+DESCRIME nome_da_tabela;
+
+Renomear Tabelas:
+RENAME TABLE tabela1 TO tabela2;
+//Este comando também permite renomear views no banco.
+
+Alterar Tabelas:
+ALTER TABLE nome_da_tabela
+ADD nome_da_coluna tipo_dado constraints;
+Ex:
+ALTER TABLE tbl_Livros
+ADD Edicao TINYINT;
+
+Excluir Coluna:
+ALTER TABLE nome_da_tabela
+DROP COLUMN nome_da_coluna;
+
+Ex:
+ALTER TABLE tbl_Livros
+DROP COLUMN Edicao;
+
+Adicionar Chave Primária:
+ALTER TABLE nome_da_tabela
+ADD PRIMARY KEY (nome_da_coluna)
+
+Adicionar Chave Estrangeira:
+ALTER TABLE tbl_Livros ADD CONSTRAINT fk_IdAutor FOREIGN KEY (IdAutor) REFERENCES tbl_Autores (IdAutor);
+
+Alterar Colunas Existentes:
+ALTER TABLE tbl_Emprestimos
+MODIFY COLUMN IdEmprestimo SMALLINT;
+
+Configurar Auto Incremento
+ALTER TABLE tbl_Livros AUTO_INCREMENT=100; //inicia a partir do 100
+
+Excluir Tabela:
+DROP TABLE IF EXISTS tabela1, tabela2, ...;
+

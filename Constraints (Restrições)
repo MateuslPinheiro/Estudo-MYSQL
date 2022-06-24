@@ -1,0 +1,15 @@
+Constraints (Restrições)
+Principais:
+NOT NULL	//Obriga um campo a sempre possuir um valor
+
+UNIQUE		//Impede a duplicidade de uma coluna
+
+PRIMARY KEY	//Só existe uma chave primária por tabela é única e não pode receber valor nulo
+
+FOREIGN KEY	//Aponta para um chave primária em outra tabela
+Ex: CONSTRAINT fk_ID_Autor FOREIGN KEY(ID_Autor) REFERENCES tbl_autores(ID_Autor)
+
+DEFAULT		//Insere valor padrão em uma coluna
+
+CHECK		//Garante que valores satisfaçam a um critério
+Ex: impedir cadastro de número negativo

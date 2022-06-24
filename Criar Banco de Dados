@@ -1,0 +1,9 @@
+CREATE DATABASE [IF NOT EXISTS] nome_BD; //IF NOT EXISTS é opcional
+
+SHOW DATABASES;
+
+USE nome_banco_de_dados; //Seleciona o BD que eu quero executar os comandos
+
+SELECT DATABASE();	//Mostra o BD selecionado no momento
+
+DROP DATABASE [IF EXISTS] nome_BD;	//Excluir BD

@@ -1,0 +1,42 @@
+Tipos de Dados:
+
+Tipos Inteiros:
+tinyint		//1 Byte
+smallint	//2 Bytes
+mediumint	//3 Bytes
+int 		//4 Bytes
+bigint		//8 Bytes
+
+Tipos de Ponto Flutuante:
+float	//ocupa 4 bytes
+double	//ocupa 8 bytes
+
+Tipos de Ponto Fixo(Precisão Exata):
+decimal	//Trabalhar com dados monetários
+numeric	//mesmo que decimal(MySQL)
+
+Tipos de Caractere:
+char	//Tamanho fixo entre 0 e 255 caracteres
+varchar	//String de tamanho variável
+
+Tipos BIT e Booleano:
+boolean || tinyint(1)	// 0 é falso	|| 1 é verdadeiro
+
+bit 	//armazena sequência de bits(valor binário) até 64. Padrão é 1
+
+Tipos de Data e Hora:
+date	//Data de 01/01/1000 a 31/12/9999, formato YYYY-MM-DD
+datetime	//formato YYYY-MM-DD HH:MM:SS
+time 	//HH:MM:SS
+year(M) //year(2) ou year(4). Padrão é 4.
+timestamp	//Armazena dado nos formato UTC
+
+Tipos BLOB ||TEXT
+tinyblob || tinytext		//até 255 bytes
+blob 	 ||	text			//até 64KB
+mediumblob || mediumtext	//até 16MB
+longblob || longtext		//até 4G
+
+Tipos de Conjuntos de Valores:
+enum	// enumeração -> como se fosse validação de dados no excel
+set		// set _> como se fosse validação de dados no excel separado por vírgula

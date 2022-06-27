@@ -1,0 +1,60 @@
+Funções de Agregação
+FUnções de agregação são funções SQL que permitem executar uma operação aritmética nos valores de uma coluna em todos os registros de uma tabela.
+Retornam um valor único baseado em um conjunto de valores.
+
+Sintaxe:
+SELECT Função (ALL | DISTINCT expressão)
+
+OBS:
+*ALL - avalia todos os registros(padrão)
+
+*DISTINCT - usa apenas os valores distintos (sem repetição)
+
+*Funções de agregação desconsideram valores NULL (exceto COUNT(*))
+
+*Cláusulas WHERE não podem conter funções de agregação
+
+Tipos:
+MIN		//Valor mínimo
+
+MAX		//Valor máximo
+
+AVG		//Média Aritmética
+
+SUM		//Totalizar (Soma)
+
+COUNT 	//Conta quantidade de itens
+
+Ex: // Contar o número de registro da tabela de autores
+SELECT COUNT(*) AS Total //* = todos os registros
+FROM tbl_Autores;
+
+Ex²: // Livros de quantas editoras eu tenho?
+SELECT COUNT (DISTINCT IdEditora)
+FROM tbl_Livros;
+
+Ex³: // Preço mais caro que tenho
+MAX(PrecoLivro) AS 'Mais caro'
+FROM tbl_Livros;
+
+Ex⁴: // Menor preço
+SELECT MIN(PrecoLivro)
+FROM tbl_Livros;
+
+Ex⁵: //Média dos preço dos livros que tenho
+SELECT AVG(PrecoLivro) AS Média
+FROM tbl_Livros;
+
+Ex⁶: //Somatório dos preços
+SELECT SUM(PrecoLivro) AS 'Preço Total'
+FROM tbl_Livros;
+
+Ex⁷: //Função média sem usar AVG
+SELECT SUM(PrecoLivro) / COUNT(*)
+AS 'PREÇO Médio' FROM tbl_Livros;
+
+Ex⁸: //Tabela mais elaborada
+ SELECT COUNT(*) AS 'Quant Livros',
+ SUM(NumeroPaginas) AS 'Páginas Totais',
+ AVG(NumeroPaginas) 'Média de Págs.'
+ FROM tbl_Livros;

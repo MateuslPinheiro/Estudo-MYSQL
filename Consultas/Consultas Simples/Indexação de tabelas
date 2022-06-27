@@ -1,0 +1,30 @@
+Indexação de tabelas
+Aumenta o desempenho na execução da consulta. Alcançando o resultado de maneira mais rápida.
+
+MySQL cria índices automaticamente para campos de:
+Chave Primária
+Chave Estrangeira
+Constraint UNIQUE
+
+Sintaxe:
+CREATE [UNIQUE] INDEX nome_índice
+ON nome_tabela(
+coluna1[ASC | DESC],
+[coluna2[ASC | DESC]]...
+);
+
+ALTER TABLE nome_tabela ADD INDEX Nome_índice (colunas)
+
+SHOW INDEX FROM tbl_Editoras; //Mostra os index na tabela
+
+EXPLAIN SELECT * FROM tbl_Editoras
+WHERE NomeEditora = 'Springer'; 
+//EXPLAIN: Explica sobre a execução do comando
+
+DROP INDEX idx_editora ON tbl_Editoras; //Exclui Índice
+
+Ex: CREATE INDEX idx_editora ON tbl_Editoras(NomeEditora);
+
+
+
+

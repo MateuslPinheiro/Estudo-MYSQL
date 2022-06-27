@@ -1,0 +1,33 @@
+Cláusula Where
+Permite filtrar o valor de acordo com um critério especificado.
+
+Sintaxe:
+SELECT colunas
+FROM tabela
+WHERE coluna = valor;
+
+Ex: SELECT IdEditora, NomeLivro, DataPub
+from tbl_Livros
+WHERE IdEditora >= 4;
+
+Ex²: SELECT IDAutor, NomeAutor
+FROM tbl_Autores
+WHERE SobrenomeAutor = 'Stanek'
+
+Ex³: SELECT IdEditora, NomeLivro, DataPub
+from tbl_Livros
+WHERE DataPub >= '20160101';
+
+Operadores AND, OR e NOT
+
+Ex: SELECT IdLivro, NomeLivro, IdEditora
+FROM tbl_Livros
+WHERE IdLivro > 102 AND IdEditora <4;
+
+Ex²: SELECT IdLivro, NomeLivro, IdEditora
+FROM tbl_Livros
+WHERE IdLivro > 102 OR IdEditora <4;
+
+Ex³: SELECT IdLivro, NomeLivro, IdEditora
+FROM tbl_Livros
+WHERE NOT IdEditora = 10;

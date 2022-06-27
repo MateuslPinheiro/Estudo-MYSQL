@@ -1,0 +1,17 @@
+Consultas Simples
+
+SELECT Colunas FROM Tabela; //Busca de coluna(s) de uma tabela
+
+Ex: SELECT * FROM tbl_Autores; //* Busca todos os dados.
+
+Ex²: SELECT NomeAutor FROM tbl_Autores;
+
+Ex³ SELECT NomeLivro
+FROM tbl_Livros;
+
+Ex⁴: SELECT NomeLivro, PrecoLivro FROM tbl_Livros;
+
+Ex⁵: SELECT NomeAutor, SobrenomeAutor
+FROM tbl_Autores;
+
+Ex⁶: SELECT NomeLivro, ISBN13, DataPub FROM tbl_Livros;

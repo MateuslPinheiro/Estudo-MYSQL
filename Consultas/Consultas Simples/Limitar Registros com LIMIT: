@@ -1,0 +1,22 @@
+Limitar Registros com LIMIT:
+Limita o número de resultados
+
+Sintaxe:
+SELECT colunas FROM tabela
+ORDER BY coluna
+LIMIT [offset], contagem; //offset: escolhe a partir de que item vai começar a contagem.
+
+Ex: SELECT NomeLivro, PrecoLivro
+FROM tbl_Livros
+ORDER BY PrecoLivro
+LIMIT 2;
+
+Ex²: SELECT NomeLivro, PrecoLivro
+FROM tbl_Livros
+ORDER BY PrecoLivro DESC
+LIMIT 3;
+
+Ex³: SELECT NomeLivro, NumeroPaginas
+FROM tbl_Livros
+ORDER BY NumeroPaginas DESC
+LIMIT 2, 3; //Retorna o 3º, o 4º e o 5º livro com mais páginas

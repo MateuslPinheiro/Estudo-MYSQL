@@ -1,0 +1,21 @@
+Criar Alias com AS
+Pode-se dar um nome diferente a uma coluna ou tabela no retorno de uma consulta usando um Alias.(Apelido)
+
+Sintaxe:
+SELECT coluna1 AS alias_coluna1,
+coluna2 AS alias_coluna2,
+colunaN [AS] alias_colunaN,
+FROM tabela AS alias_tabela;
+
+Ex: SELECT NomeLivro AS Livro
+FROM tbl_Livros
+WHERE IDLivro > 102; // A coluna Aparecerá com o título Livro.
+
+Ex²: SELECT NomeAutor AS Nome,
+SobrenomeAutor Sobrenome		//AS é opcional
+FROM tbl_Autores AS Autores;
+
+Ex³: SELECT NomeLivro Livro,
+PrecoLivro AS P
+FROM tbl_Livros
+ORDER BY P DESC;

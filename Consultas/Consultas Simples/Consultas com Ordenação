@@ -1,0 +1,20 @@
+Consultas com Ordenação
+
+Ordenação com cláusula ORDER BY:
+SELECT colunas FROM tabela
+ORDER BY colunas [ASC | DESC]; //Padrão ASC(ENDENTE)
+
+Ex: SELECT * FROM tbl_Livros
+ORDER BY NomeLivro ASC;
+
+Ex²: SELECT NomeLivro, IdEditora
+FROM tbl_Livros
+ORDERBY IdEditora;
+
+Ex³: SELECT NomeLivro, PrecoLivro
+FROM tbl_Livros
+ORDER BY PrecoLivro DESC;
+
+Ex⁴: SELECT NomeLivro, DataPub, IdAssunto
+FROM tbl_Livros
+ORDER BY IdAssunto, NomeLivro;

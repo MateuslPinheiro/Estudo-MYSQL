@@ -40,9 +40,9 @@ CONSTRAINT pk_id_assunto PRIMARY KEY (IdAssunto)
 );
 
 Ex⁵: CREATE TABLE tbl_LivrosAutores (
-IdLivro smallint NOT NULL,
-IdAutor smallint NOT NULL,
-CONSTRAINT pk_id_livro_autor PRIMARY KEY (IdLivro, IdAutor),
-CONSTRAINT fk_id_livros FOREIGN KEY (IdLivro) REFERENCES tbl_Livros(IDLivro),
-CONSTRAINT fk_id_autores FOREIGN KEY (IdAutor) REFERENCES tbl_autores (IdAutor)
+IDLivro smallint NOT NULL,
+IDAutor smallint NOT NULL,
+CONSTRAINT pk_id_livro_autor PRIMARY KEY (IDLivro, IDAutor),
+CONSTRAINT fk_id_livros FOREIGN KEY (IDLivro) REFERENCES tbl_Livros(IDLivro),
+CONSTRAINT fk_id_autores FOREIGN KEY (IDAutor) REFERENCES tbl_Autores (IDAutor)
 );

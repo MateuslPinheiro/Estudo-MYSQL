@@ -1,0 +1,57 @@
+Inserir dados
+INSERT INT tabela (coluna1, coluna2,...)
+VALUES (valor1, valor2,...)
+
+OBS: NÃO INCLUIR COLUNAS COM AUTO_INCREMENT
+
+Verificar dados inseridos:
+SELECT * FROM tbl_Autores;
+SELECT * FROM tbl_Editoras;
+SELECT * FROM tbl_Assuntos;
+SELECT * FROM tbl_Livros;
+
+
+Ex:
+INSERT INTO tbl_Autores (NomeAutor, SobrenomeAutor)
+VALUES
+('Daniel', 'Barret'), ('Gerald', 'Carter'), ('Mark', 'Sobell'), ('William', 'Stanek'), ('Richard', 'Blum'), ('Christine', 'Bresnahan'), ('Richard', 'Silverman'), ('Robert', 'Byrnes'), ('Jay', 'Ts'), ('Robert', 'Eckstein'), ('Paul', 'Horowitz'), ('Winfield', 'Hill'), ('Joel', 'Murach'), ('Paul', 'Scherz'), ('Simon', 'Monk');
+
+Ex:
+INSERT INTO tbl_Editoras (NomeEditora)
+VALUES
+('Prentice Hall'), ('O´Reilly'),
+('Microsoft Press'), ('Wiley'),
+('Mc Graw Hill'), ('Bookman'),
+('Novatec'), ('Apress'),
+('Sybex'), ('Mike Murach and Associates');
+
+Ex:
+INSERT INTO tbl_Assuntos (Assunto)
+VALUES
+('Ficção'), ('Botânica'),
+('Eletrônica'), ('Matemática'),
+('Aventura'), ('Literatura'),
+('Informática'), ('Suspense');
+
+Ex:
+INSERT INTO tbl_Livros (NomeLivro, ISBN13, DataPub, PrecoLivro, NumeroPaginas, IdAssunto,
+IdEditora)
+VALUES
+('Linux Command Line and Shell Scripting','9781118983843', '20150109', 165.55, 816, 7, 4),
+('SSH, the Secure Shell','9780596008956', '20050517', 295.41, 672, 7, 2),
+('Using Samba','9780596002565', '20031221', 158.76, 449, 7, 2),
+('A Arte da Eletrônica', '9788582604342', '20170308', 176.71, 1160, 7, 6),
+('Windows Server 2012 Inside Out','9780735666313', '20130125', 179.51, 1584, 7, 3),
+('Murach´s MySQL','9781943872367', '20190501', 227.64, 650, 7, 10),
+('Practical Electronics for Inventors', '9781259587542', '20160711', 119.58, 1056, 3, 5);
+
+Ex:
+INSERT INTO tbl_LivrosAutores (IDLivro, IDAutor)
+VALUES
+(100,5), (100,6),
+(101,1), (101,7), (101,8),
+(102,2), (102,9), (102,10),
+(103,11), (103,12),
+(104,4),
+(105,13),
+(106,14), (106,15);

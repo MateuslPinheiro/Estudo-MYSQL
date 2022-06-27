@@ -1,0 +1,24 @@
+Gerenciar Dados
+
+Atualizar Registros:
+UPDATE tabela
+SET coluna = novo_valor
+WHERE coluna = valor_filtro; //Se WHERE não for especificado, todos os dados receberão alteração
+
+Ex:
+SELECT * FROM tbl_Livros;
+
+UPDATE tbl_Livros
+SET NomeLivro = 'Nome que quero atualizar'
+WHERE IdLivro = 'Id do livro que quero atualizar'
+
+UPDATE tbl_Livros
+SET PrecoLivro = PrecoLivro + 10
+WHERE IdLivro = 'Id do livro que quero atualizar'
+
+Excluir Registros:
+DELETE FROM tabela
+WHERE coluna = valor;
+
+Truncate table:
+Remove todas as linhas de uma tabela

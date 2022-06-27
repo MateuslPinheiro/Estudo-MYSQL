@@ -1,0 +1,10 @@
+Verificar Relacionamentos
+
+SELECT L.NomeLivro AS Livro,
+CONCAT(A.NomeAutor, ' ', A.SobrenomeAutor) AS Autor,
+L.PrecoLivro As 'Preço do Livro'
+FROM tbl_livrosautores LA
+INNER JOIN tbl_livros L
+ON L.IdLivro = LA.IdLivro
+INNER JOIN tbl_Autores A
+ON A.IdAutor = LA.IdAutor;

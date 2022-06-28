@@ -1,0 +1,32 @@
+Especificar Condições de Filtragem em Grupo - HAVING
+
+HAVING:
+Usada para aplicar filtros em grupos de registros ou agregações.
+Frequentemente usada com a cláusula GROUP BY para filtrar as colunas agrupadas.
+
+Sempre avaliada após o agrupamento com GROUP BY.
+
+Somente pode se referir a uma coluna listada na cláusula SELECT, ao contrário de filtros com WHERE.
+
+Sintaxe:
+SELECT colunas, função_agregação()
+FROM tabela
+WHERE filtro
+GROUP BY colunas
+HAVING filtro_agrupamento
+ORDER BY coluna;
+
+Ex: //Tabela separada por IdEditora que tenha mais de 200.00 de Preço
+SELECT IdEditora, SUM(PrecoLivro) AS Soma
+FROM tbl_Livros
+GROUP BY IdEditora
+HAVING Soma > 300;
+
+Ex²: 
+SELECT IdEditora,
+SUM(NumeroPaginas) AS SomaPaginas
+FROM tbl_Livros
+WHERE IdAssunto > 3
+GROUP BY IdEditora
+HAVING SomaPaginas >= 900
+ORDER BY IdEditora;

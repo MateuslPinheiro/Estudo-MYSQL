@@ -1,0 +1,49 @@
+OUTER JOINS
+
+LEFT JOIN: Retorna todas as linhas da tabela à esquerda, mesmo se não houver nenhuma correspondência na tabala à direita
+
+Sintaxe:
+SELECT colunas
+FROM tabela_esq
+LEFT (OUTER) JOIN tabela_dir
+ON tabela_esq.coluna = tabela_dir.coluna;
+
+RIGHT JOIN: Retorna todas as linhas da tabela à direita, mesmo se não houver nenhuma correspondência na tabala à esquerda
+
+Sintaxe:
+SELECT colunas
+FROM tabela_esq
+RIGHT (OUTER) JOIN tabela_dir
+ON tabela_esq.coluna = tabela_dir.coluna;
+
+CROSS JOIN: Retorna o produto cartesiano das linhas das tabelas.
+
+Sintaxe:
+SELECT colunas FROM tabela1
+CROSS JOIN tabela2;
+
+Ex: //LEFT JOIN
+SELECT * FROM tbl_Assuntos
+LEFT JOIN tbl_Livros
+ON tbl_Livros.IdAssunto = tbl_Assuntos.IdAssunto;
+
+Ex²: //LEFT JOIN excluindo correspondências
+SELECT * FROM tbl_Assuntos
+LEFT JOIN tbl_Livros
+ON tbl_Livros.IdAssunto = tbl_Assuntos.IdAssunto;
+WHERE tbl_Livros.IdAssunto IS NULL;
+
+Ex³: //RIGHT JOIN
+SELECT * FROM tbl_Livros AS Li
+RIGHT JOIN tbl_Editoras AS Ed
+ON Li.IdEditora = Ed.IdEditora;
+
+Ex⁴: //RIGHT JOIN excluindo correspondências
+SELECT * FROM tbl_Livros AS Li
+RIGHT JOIN tbl_Editoras AS Ed
+ON Li.IdEditora = Ed.IdEditora;
+WHERE Li.IdEditora IS NULL;
+
+Ex⁵: //CROSS JOIN
+SELECT * FROM tbl_Livros
+CROSS JOIN tbl_livrosautores;

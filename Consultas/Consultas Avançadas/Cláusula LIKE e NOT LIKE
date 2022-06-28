@@ -1,0 +1,29 @@
+Cláusula LIKE e NOT LIKE
+Like determina se uma cadeia de caracteres corresponde a um padrão especificado.
+
+NOT LIKE inverte a comparação, verificando se a cadeia de caracteres NÃO corresponde ao padrão especificado.
+
+Metacaracteres:
+'%' Qualquer cadeia de 0 ou mais caracteres
+
+'_' Qualquer caractere único
+
+
+Ex: //Tabela de livros que iniciam com a letra A
+SELECT * FROM tbl_Livros
+WHERE NomeLivro LIKE 'A%';
+
+Ex²: //Tabela de livros que não iniciam com a letra S
+SELECT * FROM tbl_Livros
+WHERE NomeLivro NOT LIKE 'S%';
+
+Ex³: //Tabela começa com um caractere qualquer, seguido pela letra I seguido por quaisquer números de caractere
+SELECT NomeLivro
+FROM tbl_Livros
+WHERE NomeLivro LIKE '_i%';
+
+Ex⁴: //Tabela de livros com preço que não começam com a letra A e que custam menos que 190.00
+SELECT NomeLivro AS Livro, PrecoLivro AS Valor
+FROM tbl_Livros
+WHERE NomeLivro NOT LIKE 'A%'
+AND PrecoLivro <= 190.00;

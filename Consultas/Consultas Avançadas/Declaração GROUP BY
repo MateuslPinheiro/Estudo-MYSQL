@@ -1,0 +1,37 @@
+Declaração GROUP BY
+Usamos a declaração GROUP BY para agrupar registros em subgrupos baseados em colunas ou valores retornados por uma expressão
+
+A cláusula WHERE, quando empregada, é sempre avaliada antes do agrupamento com GROUP BY
+
+Sintaxe:
+SELECT colunas, função_agregação()
+FROM tabela
+WHERE filtro
+GROUP BY colunas
+ORDER BY colunas;
+
+Ex: //Tabela que obterá a soma de cada IdAssunto separadamente
+SELECT IdAssunto, SUM(NumeroPaginas)
+FROM tbl_Livros
+GROUP BY IdAssunto;
+
+Ex²: //Tabela que obterá a soma de cada IdEditora separadamente
+SELECT IdEditora, SUM(PrecoLivro)
+FROM tbl_Livros
+GROUP BY IdEditora;
+
+Ex³: 
+SELECT IdEditora, SUM(PrecoLivro) AS SOMA
+FROM tbl_Livros
+WHERE NumeroPaginas >= 1000
+GROUP BY IdEditora
+
+WITH ROLLUP
+Acrescenta uma linha de sumário
+Sintaxe: GROUP BY coluna WITH ROLLUP
+
+Ex: //Tabela com uma linha final com o somatório dos filtros
+SELECT IdEditora, SUM(NumeroPaginas) AS SomaPaginas
+FROM tbl_Livros
+WHERE IdAssunto > 3
+GROUP BY IdEditora WITH ROLLUP;

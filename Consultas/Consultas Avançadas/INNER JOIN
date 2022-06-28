@@ -1,0 +1,50 @@
+INNER JOIN
+(Relacionamento entre 2 tabelas)
+Retorna linhas quando houver pelo menos uma correspondência em ambas as tabelas
+
+Cláusula ON
+Determina o ponto de conexão de 2 tabelas
+
+Nome de coluna qualificado: tbl_Livros.IdEditora
+Ex: ON tbl_Livros.IdEditora = tbl_Editoras.IdEditora
+
+Sintaxe:
+SELECT colunas
+FROM tabela1
+	[INNER] JOIN tabela2
+		ON tabela1.coluna=tabela2.coluna;
+	[INNER] JOIN tabelaN
+		ON tabela1.coluna=tabelaN.coluna;
+
+Ex:
+SELECT * FROM tbl_Livros
+INNER JOIN tbl_Editoras
+ON tbl_Livros.IdEditora = tbl_Editoras.IdEditora;
+
+Ex²: 
+SELECT tbl_Livros.NomeLivro, tbl_Livros.ISBN13, tbl_Assuntos.Assunto
+FROM tbl_Livros JOIN tbl_Assuntos
+ON tbl_Livros.IdAssunto = tbl_Assuntos.IdAssunto;
+
+Ex³:
+SELECT L.NomeLivro AS Livros,
+E.NomeEditora AS Editoras
+FROM tbl_Livros AS L JOIN tbl_Editoras AS E
+ON L.IdEditora = E.IdEditora
+WHERE E.NomeEditora LIKE 'M%';
+
+Ex⁴: 
+SELECT L.NomeLivro Livro, C.Assunto Assunto, E.NomeEditora Editora
+FROM tbl_Livros L
+JOIN tbl_Assuntos C
+	ON L.IdAssunto = C.IdAssunto
+JOIN tbl_Editoras E
+	ON L.IdEditora = E.IdEditora;
+
+Ex⁵: 
+SELECT L.NomeLivro Livro,
+CONCAT(A.NomeAutor, ' ', A.SobrenomeAutor) Autor
+L.PrecoLivro 'Preço do Livro'
+FROM tbl_livrosautores LA
+JOIN tbl_Livros L ON L.IdLivro = LA.IdLivro
+JOIN tbl_Autores A ON A.IdAutor = LA.IdAutor;

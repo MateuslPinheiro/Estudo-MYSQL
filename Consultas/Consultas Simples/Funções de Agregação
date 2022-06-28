@@ -15,15 +15,15 @@ OBS:
 *Cláusulas WHERE não podem conter funções de agregação
 
 Tipos:
-MIN		//Valor mínimo
+MIN()		//Valor mínimo
 
-MAX		//Valor máximo
+MAX()		//Valor máximo
 
-AVG		//Média Aritmética
+AVG()		//Média Aritmética
 
-SUM		//Totalizar (Soma)
+SUM()		//Totalizar (Soma)
 
-COUNT 	//Conta quantidade de itens
+COUNT() 	//Conta quantidade de itens
 
 Ex: // Contar o número de registro da tabela de autores
 SELECT COUNT(*) AS Total //* = todos os registros

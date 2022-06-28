@@ -1,0 +1,15 @@
+Cláusula BETWEEN
+Filtragem de intervalo em uma cláusula WHERE
+
+Sintaxe:
+SELECT colunas FROM tabela
+WHERE coluna BETWEEN valor1 AND valor2
+
+Ex: SELECT * FROM tbl_Livros
+WHERE DataPub BETWEEN '20040517' AND '20110517'
+
+Ex²: SELECT NomeLivro AS Livro, PrecoLivro AS Preço
+FROM tbl_Livros
+WHERE PrecoLivro BETWEEN 170.00 AND 200.00
+OR PrecoLivro BETWEEN 220.00 AND 300.00;
+

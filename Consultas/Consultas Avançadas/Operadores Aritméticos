@@ -1,0 +1,25 @@
+Operadores Aritméticos
++ Soma
+- Subtração
+/ Divisão
+* Multiplicação
+% | MOD Módulo(resto da divisão inteira)
+DIV Divisão inteira
+
+Ex: 
+SELECT 3 * 9
+
+Ex²:
+SELECT NomeLivro,
+PrecoLivro * 5 AS 'Preço de 5 Unidades'
+FROM tbl_Livros;
+
+Ex³: 
+SELECT 2 * 9 / 3;
+
+EX⁴: 
+SELECT NomeLivro, PrecoLivro / 2 AS 'Preço com 50%
+de desconto' FROM tbl_Livros;
+
+Ex⁵: 
+SELECT 10 MOD 3;

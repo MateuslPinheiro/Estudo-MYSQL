@@ -1,0 +1,50 @@
+Operador UNION
+
+Combina dados de duas ou mais consultas.
+
+Uma UNION combina as linhas de dois ou mais conjuntos de resultados.
+
+Cada declaração SELECT deve ter o mesmo número de colunas, tipos de dados e ordem das colunas.
+
+Sintaxe:
+SELECT declaração1
+UNION [ALL]
+SELECT declaração2
+UNION [ALL]
+SELECT declaração3 ...
+[ORDER BY Colunas]
+
+Ex: //Retornar nomes de livros e preços dos livros; caso o preço do livro seja igual ou superior a R$ 150,00, mostrar a mensagem "Livro Caro" em uma coluna à direita no resultado da consulta.
+Caso contrário, mostrar a mensagem "Preço Razoável"
+Ordenar por preço, do mais barato para o mais caro.
+
+SELECT NomeLivro Livro, PrecoLivro Preço, 'Livro Caro' Resultado
+FROM tbl_Livros
+WHERE PrecoLivro >=150.00
+UNION
+SELECT NomeLivro Livro, PrecoLivro Preço,
+'Preço Razoável' Resultado
+FROM tbl_Livros
+WHERE PRECOLivro < 150.00
+ORDER BY Preço;
+
+Ex²: //Retornar nomes de livros, preços e assuntos dos livros.
+Caso o assunto seja Eletrônica, mostrar o preço
+acrescido de 15% em seu valor.
+Caso o livro custe mais de 200 reais, descontar 10% em
+seu valor.
+Ordenar por preço ajustado, do mais caro para o mais
+barato.
+
+SELECT L.NomeLivro Livro, L.PrecoLivro 'Preço Normal', L.PrecoLivro * 0.90
+'Preço Ajustado', A.Assunto
+FROM tbl_Livros L INNER JOIN tbl_Assuntos A
+ON L.IdAssunto = A.IdAssunto
+WHERE L.PrecoLivro > 200.00
+UNION
+SELECT L.NomeLivro Livro, L.PrecoLivro 'Preço Normal', L.PrecoLivro * 1.15
+'Preço Ajustado', A.Assunto
+FROM tbl_Livros L INNER JOIN tbl_Assuntos A
+ON L.IdAssunto = A.IdAssunto
+WHERE A.Assunto = 'Eletrônica'
+ORDER BY 'Preço Ajustado' DESC;

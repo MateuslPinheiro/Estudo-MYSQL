@@ -1,0 +1,28 @@
+Funções Matemáticas
+CEILING(x)	Arredonda para cima
+FLOOR(x)	Arredonda para baixo
+ROUND(n,x)	Arredonda x casas decimais
+HEX(d)		Retorna a representação hexadecimal de um valor decimal d
+SIN(x)		Retorna o seno em radianos
+PI()		Retorna o valor de Pi
+POW(x,y)	Retorna x elevado a y
+SQRT(x)		Raiz quadrada de x
+
+Ex:
+SELECT PI();
+
+Ex²:
+SELECT POW(2,4);
+
+Ex³:
+SELECT SQRT(81);
+
+Ex⁴:
+SELECT SIN(PI());
+
+Ex⁵:
+SELECT HEX(1200);
+
+Ex⁶:
+SELECT NomeLivro, ROUND(PrecoLivro * 5, 2) AS
+'Preço Arredondado' FROM tbl_Livros;
